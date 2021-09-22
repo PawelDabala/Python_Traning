@@ -143,3 +143,19 @@ class Capital(Postion):
 
 capital = Capital('Oslo', 10.8, 23.8, 'Norway')
 print(capital)
+
+
+from dataclasses import dataclass
+
+@dataclass
+class SimplePosition:
+    name: str
+    lon: float
+    lat: float
+
+@dataclass
+class SlotPosition:
+    __slots__ = ['name', 'lon', 'lat']
+    name: str
+    lon: float
+    lat: float
