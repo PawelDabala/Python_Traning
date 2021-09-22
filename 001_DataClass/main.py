@@ -1,4 +1,4 @@
-from dataclasses import dataclass, make_dataclass
+from dataclasses import dataclass, make_dataclass, field
 from typing import List
 
 @dataclass
@@ -30,14 +30,14 @@ queen_of_hearts = DataClassCard('Q', 'Hearts')
 # Position = make_dataclass('Position', ['name', 'lat', 'lon'])
 
 #########################################################
-@dataclass
-class Position:
-    name: str
-    lon: float = 0.0 
-    lat: float = 0.0
+# @dataclass
+# class Position:
+#     name: str
+#     lon: float = 0.0 
+#     lat: float = 0.0
 
-print(Position('Null Island'))
-print(Position('Greenwich', lat=51.8))
+# print(Position('Null Island'))
+# print(Position('Greenwich', lat=51.8))
 
 from typing import Any
 
@@ -70,12 +70,35 @@ class PlayingCard:
     suit: str
 
 
+# @dataclass
+# class Deck:
+#     cards: List[PlayingCard]
+
+# queen_of_hearts = PlayingCard('Q', 'Hearts')
+# ace_of_spades = PlayingCard('A', 'Spades')
+# two_cards = Deck([queen_of_hearts, ace_of_spades])
+
+# print(two_cards)
+
+# RANKS = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
+# SUITS = '♣ ♢ ♡ ♠'.split()
+
+# def make_french_deck():
+#     return [PlayingCard(r, s) for s in SUITS for r in RANKS]
+
+# @dataclass
+# class Deck:
+#     cards: List[PlayingCard]= field(default_factory=make_french_deck)
+
+from dataclasses import fields
 @dataclass
-class Deck:
-    cards: List[PlayingCard]
+class Position:
+    name: str
+    lon: float = field(default=0.0, metadata={'unit': 'degrees'})
+    lat: float = field(default=0.0, metadata={'unit': 'degrees'})
 
-queen_of_hearts = PlayingCard('Q', 'Hearts')
-ace_of_spades = PlayingCard('A', 'Spades')
-two_cards = Deck([queen_of_hearts, ace_of_spades])
-
-print(two_cards)
+# print(fields(Position))
+lat_unit = fields(Position)[2].metadata['unit']
+print(lat_unit)
+lat = Position('test')
+print(fields(lat))
