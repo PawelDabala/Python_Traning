@@ -1,13 +1,14 @@
 from dataclasses import dataclass, make_dataclass, field
+import dataclasses
 from typing import List
 
-@dataclass
-class DataClassCard:
-    rank: str
-    suit: str
+# @dataclass
+# class DataClassCard:
+#     rank: str
+#     suit: str
 
 
-queen_of_hearts = DataClassCard('Q', 'Hearts')
+# queen_of_hearts = DataClassCard('Q', 'Hearts')
 # print(queen_of_hearts.rank)
 # print(queen_of_hearts)
 # print(queen_of_hearts == DataClassCard('Q', 'Hearts'))
@@ -64,10 +65,10 @@ class Position:
         return 2 * r * asin(sqrt(h))
 
 
-@dataclass
-class PlayingCard:
-    rank: str
-    suit: str
+# @dataclass
+# class PlayingCard:
+#     rank: str
+#     suit: str
 
 
 # @dataclass
@@ -90,15 +91,30 @@ class PlayingCard:
 # class Deck:
 #     cards: List[PlayingCard]= field(default_factory=make_french_deck)
 
-from dataclasses import fields
-@dataclass
-class Position:
-    name: str
-    lon: float = field(default=0.0, metadata={'unit': 'degrees'})
-    lat: float = field(default=0.0, metadata={'unit': 'degrees'})
+# from dataclasses import fields
+# @dataclass
+# class Position:
+#     name: str
+#     lon: float = field(default=0.0, metadata={'unit': 'degrees'})
+#     lat: float = field(default=0.0, metadata={'unit': 'degrees'})
 
-# print(fields(Position))
-lat_unit = fields(Position)[2].metadata['unit']
-print(lat_unit)
-lat = Position('test')
-print(fields(lat))
+# # print(fields(Position))
+# lat_unit = fields(Position)[2].metadata['unit']
+# print(lat_unit)
+# lat = Position('test')
+# print(fields(lat))
+
+# next
+# You Need Representation?
+
+#########################################################
+@dataclass
+class PlayingCard:
+    rank: str
+    suit: str
+
+    def __str__(self):
+        return f'{self.suit}{self.rank}'
+
+ace_of_spades = PlayingCard('A', '♠')
+print(ace_of_spades)
