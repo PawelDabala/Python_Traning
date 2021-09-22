@@ -120,12 +120,26 @@ from typing import List
 # print(ace_of_spades)
 
 #########################################################
-@dataclass(frozen=True)
-class Position:
-    name: str
-    lon: float = 0.0
-    lat: float = 0.0
+# @dataclass(frozen=True)
+# class Position:
+#     name: str
+#     lon: float = 0.0
+#     lat: float = 0.0
 
-pos = Position('Oslo', 10.8, 59.9)
-print(pos.name)
-pos.name = 'Stockholm'
+# pos = Position('Oslo', 10.8, 59.9)
+# print(pos.name)
+# pos.name = 'Stockholm'
+# #ERROR
+#########################################################
+@dataclass
+class Postion:
+    name: str
+    lon: float
+    lat: float
+
+@dataclass
+class Capital(Postion):
+    country: str
+
+capital = Capital('Oslo', 10.8, 23.8, 'Norway')
+print(capital)
