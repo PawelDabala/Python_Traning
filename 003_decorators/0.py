@@ -1,9 +1,3 @@
-def foo():
-    return 'bar'
-
-def hello(name):
-    return f'Helo {name}'
-
 #dekorator przyjmuje funkcje
 def uppercase(func):
     #funkcja która będzie zwrócona, wydmuszka
@@ -13,6 +7,17 @@ def uppercase(func):
 
     return wrapper
 
-print(uppercase(foo)())
-print(uppercase(hello)('Pawel'))
+@uppercase   
+def foo():
+    return 'bar'
+
+@uppercase
+def hello(name):
+    return f'Helo {name}'
+
+
+print(foo())
+print(hello("Pawel"))
+   
+
 
