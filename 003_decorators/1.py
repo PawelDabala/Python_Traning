@@ -52,3 +52,61 @@ rocket_players[1:3]
 rocket_players[1:]
 #użytkownik do drugiego włącznie
 rocket_players[:3]
+
+
+answer_one = True
+answer_two = False
+
+pineaplles = 5
+zebra = 2
+
+zebra < pineaplles
+pineaplles > zebra
+pineaplles == zebra
+
+
+
+ola_age = 10
+ola_height = 1.5
+(ola_age > 8) and (ola_height > 1.4)
+
+is_dark = input('Is it dark outside? y/n)')
+if is_dark == 'y':
+    print('Goodnight! Zzzzzzzzzzzzzzz....')
+else:
+    print('Goodmoring')
+
+
+weather = input ('What is the forecast for today? (rain/snow/sun)')
+if weather == 'rain':
+    print('Remember your umbrella!')
+elif weather == 'snow':
+    print('Remember your woolly gloves!')
+else:
+    print('Remember your sunglasses!')
+
+for licznik in range(1, 11):
+    print('Emma\'s Room - Keep Out!!!')
+
+for licznik in range(10):
+    print('Emma\'s Room - Keep Out!!!')
+
+
+while True:
+    print('This is an infinite loop!')
+
+
+while True:
+    answer = input('Are you bored yet? (y/n)')
+    if answer == 'y':
+        print('How rude!')
+        break
+
+for hooray_counter in range(1, 4):
+    for hip_counter in range(1, 3):
+        print('Hip')
+    print('Hooray!')
+
+cars = ['opel', 'volvo', 'vw', 'audi']
+for car in cars:
+    print(car)
