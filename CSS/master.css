@@ -1,13 +1,13 @@
-body {
-    background-color: cornflowerblue;
+/* Kropka odwołanie do klasy */
+.myclass {
+    color: red;
 }
-div{
-    background-color: chartreuse;
-    border-color: orange;
-    border-width: 10px;
-    border-style: dotted;
+/* Hashtag odwołanie do id */
+#one {
+    color: blue;
 }
 
-span {
-    background-color: red;
+#two {
+    color: olive;
 }
+
