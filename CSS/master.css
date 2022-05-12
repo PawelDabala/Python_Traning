@@ -1,8 +1,13 @@
-h1{
-    color: blue;
+body {
+    background-color: cornflowerblue;
+}
+div{
+    background-color: chartreuse;
+    border-color: orange;
+    border-width: 10px;
+    border-style: dotted;
 }
 
-h2{
-    color: blueviolet;
-    background-color: chartreuse;
+span {
+    background-color: red;
 }
