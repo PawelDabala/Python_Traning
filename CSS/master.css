@@ -12,15 +12,28 @@
 }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: Roboto ;
 }
 
-h1 {
+/* h1 {
     text-align: center;
     font-size: 40px;
-}
+} */
 
 p{
-    font-size: 20px;
+    font-size: 3em;
 }
 
+#up{
+    text-align: center;
+    border: 10px solid blue;
+    margin-bottom: 100px;
+    margin-left: 100px;
+}
+
+#down{
+    text-align: center;
+    border: 10px solid red;
+    padding-top: 20px;
+
+}
