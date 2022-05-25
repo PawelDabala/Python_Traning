@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from turtle import home
 from django.contrib import admin
-from django.urls import path
+from django.http.response import HttpResponse
+from django.urls import path, include
+from . import views
+
+def home_view(request):
+    return HttpResponse("HOME PAGE")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('my_app/', include('my_app.urls')),
+    path('', views.home_view)
 ]
