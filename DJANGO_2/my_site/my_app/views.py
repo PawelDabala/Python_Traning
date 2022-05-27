@@ -1,5 +1,8 @@
+import re
+from unittest import result
+from django.http import Http404
 from django.shortcuts import render
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseNotFound
 
 articles = {
     'sports': 'Sports Page',
@@ -15,7 +18,16 @@ articles = {
 #     return HttpResponse(articles['finance'])
 
 def news_view(request, topic):
-    return HttpResponse(articles[topic])
+    try:
+        result = articles[topic]
+        return HttpResponse(articles[topic])
+    except:
+        #użycie HttpResponseNotFound
+        # result = 'No Page for that topic'
+        # return HttpResponseNotFound(result)
+
+        raise Http404("404 Generic Error")
+
 
 def add_view(request, num1, num2):
     #domian.com/my_app/num1/num2  --> num1+num2
