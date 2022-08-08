@@ -3,6 +3,7 @@ from unittest import result
 from django.http import Http404
 from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseNotFound, HttpResponsePermanentRedirect
+from django.urls import reverse
 
 articles = {
     'sports': 'Sports Page',
@@ -41,6 +42,13 @@ def num_page_view(request, num_page):
     topics_list = list(articles.keys())
     topic = topics_list[num_page]
 
+    #uzycie funkcji reverse
+    """
+    dodaz nazwę w urls.
+    - nazwe uzyj w funcji reverse 
+    - po nazwie można uzyc args lub kwargs do wyswietlania odpowiedniej strony
+    """
+    webpage = reverse("topic-page", args=[topic])
     return HttpResponsePermanentRedirect(topic)
 
 
